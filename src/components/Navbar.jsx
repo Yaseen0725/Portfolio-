@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-// import portfolioImage from "./assets/portfolio_Img.jpg";
 
 const Navbar = () => {
   return (
@@ -8,14 +7,13 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* {/* Left Side: Logo and Name */}
         <div className="flex items-center space-x-4 text-white text-lg font-bold">
-          {/* <img
-            src="{portfolioImage}"
+          <img
+            src="src/assets/myImg.jpg"
             alt="photo"
             className="w-12 h-12 rounded-full object-cover"
-          /> */}
-
+          />
           <span>Mohd Yaseen</span>
-        </div> 
+        </div>
 
         {/* Menu for larger screens */}
         <ul className="hidden md:flex space-x-6 text-white">
