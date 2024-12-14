@@ -1,13 +1,16 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar';
+import {BrowserRouter as Router,Route,Routes } from 'react-router-dom';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-       <h1>Mohd Yaseen</h1> 
-    </>
-  )
+    <div>
+      <Router>
+      <Navbar/>
+      </Router>  
+      </div>
+  );
 }
 
-export default App
+export default App;
