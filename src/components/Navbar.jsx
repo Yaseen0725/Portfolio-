@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-600 p-4">
+    <nav className="bg-blue-900 p-4">
       <div className="container mx-auto flex justify-between items-center">
         {/* {/* Left Side: Logo and Name */}
         <div className="flex items-center space-x-4 text-white text-lg font-bold">
@@ -12,7 +12,12 @@ const Navbar = () => {
             alt="photo"
             className="w-12 h-12 rounded-full object-cover"
           />
-          <span>Mohd Yaseen</span>
+          <h1 className="font-semibold text-xl cursor-pointer ">
+            Mohd <span className="text-fuchsia-500">Y</span>a
+            <span className="text-fuchsia-500">s</span>e
+            <span className="text-fuchsia-500">e</span>n
+            <p className="text-sm ml-3">Web Developer</p>
+          </h1>
         </div>
 
         {/* Menu for larger screens */}
