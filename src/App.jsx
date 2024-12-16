@@ -1,17 +1,31 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Importing Router components
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import '@fortawesome/fontawesome-free/css/all.min.css';
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div>
-      <Router>
+    <Router>
+      <div>
+        {/* Navbar is always visible */}
         <Navbar />
-        <Hero />
-      </Router>
-    </div>
+
+        {/* Define Routes */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <div id="home">
+                  <Home />
+                </div>
+              </div>
+            }
+          />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

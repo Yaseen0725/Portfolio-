@@ -82,8 +82,8 @@ const Navbar = () => {
       >
         <ul className="space-y-4 py-4">
           <li>
-            <Link to="/Hero" className="hover:text-gray-300">
-              Hero
+            <Link to="/Home" className="hover:text-gray-300">
+              Home
             </Link>
           </li>
           <li>
@@ -102,7 +102,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/contact_us" className="hover:text-gray-300">
+            <Link to="/contact" className="hover:text-gray-300">
               Contact_Us
             </Link>
           </li>
