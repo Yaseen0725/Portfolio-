@@ -82,8 +82,8 @@ const Navbar = () => {
       >
         <ul className="space-y-4 py-4">
           <li>
-            <Link to="/Home" className="hover:text-gray-300">
-              Home
+            <Link to="/Hero" className="hover:text-gray-300">
+              Hero
             </Link>
           </li>
           <li>
