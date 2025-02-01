@@ -1,9 +1,10 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import React,{useState} from "react";
+import {Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className="bg-blue-900 p-4">
+    <nav className="bg-blue-900 p-4 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* {/* Left Side: Logo and Name */}
         <div className="flex items-center space-x-4 text-white text-lg font-bold">
@@ -53,9 +54,7 @@ const Navbar = () => {
         <div className="md:hidden flex items-center">
           <button
             className="text-white focus:outline-none"
-            onClick={() =>
-              document.getElementById("mobile-menu").classList.toggle("hidden")
-            }
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +76,9 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        id="mobile-menu"
-        className="md:hidden hidden bg-blue-600 text-white text-center"
+        className={`md:hidden ${
+          isMenuOpen ? "block" : "hidden"
+        } bg-blue-600 text-white text-center`}
       >
         <ul className="space-y-4 py-4">
           <li>
