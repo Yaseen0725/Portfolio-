@@ -18,6 +18,7 @@ const Hero = () => {
           backSpeed={80}
           loop={true}
         />
+      </h1>
       <p className="mt-4 text-lg text-black text-justify m-8">
          Welcome to my portfolio! I’m a frontend developer passionate about
         crafting responsive, interactive, and visually appealing web
