@@ -1,108 +1,120 @@
-import React, { useState } from "react";
-import AboutImage from "../assets/portfolio_img.jpg"; // Replace with your actual image path
+import React from "react";
+import AboutImg from "../assets/myImg.jpg";
 
 const AboutMe = () => {
-  const [activeTab, setActiveTab] = useState("Education");
-
-  // Data for each section
-  const skills = [
-    "HTML, CSS & JS",
-    "React.js & Tailwind CSS",
-    "Java, Spring & Spring Boot",
-  ];
-  const education = [
-    { year: "2021 - 2025", degree: "Bachelor of Science in Computer Science" },
-    {
-      year: "2017 - 2019",
-      degree: "Higher Secondary Certificate (12th - UP Board)",
-    },
-    {
-      year: "2015 - 2017",
-      degree: "High School Certificate (10th - UP Board)",
-    },
-  ];
-
   return (
-    <section
-      className="bg-black text-white py-2 px-7 md:px-20 font-sans"
-      id="about"
-    >
-      {/* Title */}
-      <h1 className="text-4xl font-bold mb-12 text-center">About Me</h1>
+    <div className="bg-white text-black px-3 md:px-12 lg:px-24 ">
+      {/* Navbar Section */}
+      <div className="text-center">
+        <h1 className="text-4xl font-bold">About Me</h1>
+        <p className="text-lg text-black mt-2">
+          Passionate about coding & technology
+        </p>
+      </div>
 
-      {/* About Me Section with Image and Content */}
-      <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-        {/* Image Section */}
-        <div className="flex-1">
+      {/* Main Content Section */}
+      <div className="max-w-6xl mx-auto bg-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+        {/* Left Section - Image */}
+        <div className="w-full md:w-1/3 flex justify-center">
           <img
-            src={AboutImage}
-            alt="About"
-            className="min-w-72 h-96 object-cover rounded-md mb-6 md:mb-0 md:mr-8"
+            src={AboutImg}
+            alt="Profile"
+            className="w-80 h-96 rounded-2xl shadow-md object-cover border-4 border-gray-200"
           />
         </div>
 
-        {/* Content Section */}
-        <div className="flex-1">
-          <p className="text-gray-300 mb-8 text-lg max-w-3xl text-justify ">
-            I am a passionate student with a love for solving challenges through
-            creative solutions. Currently, I’m diving into web development,
-            exploring both front-end and back-end technologies. I enjoy building
-            projects that are functional, user-friendly, and impactful. My goal
-            is to create meaningful solutions that address real-world problems.
+        {/* Right Section - Content */}
+        <div className="w-full md:w-2/3 space-y-8 text-center md:text-left">
+          <p className="text-black text-lg leading-relaxed">
+            I'm a skilled Frontend & Backend Developer with expertise in
+            building modern, scalable applications. I have worked on multiple
+            projects, bringing ideas to life with technology.
           </p>
 
-          {/* Tabs for Education and Skills */}
-          <div className="flex gap-8 mb-5 text-lg font-bold">
-            <span
-              className={`cursor-pointer ${
-                activeTab === "Education"
-                  ? "text-white border-b-2 border-pink-500"
-                  : "text-gray-400"
-              }`}
-              onClick={() => setActiveTab("Education")}
-            >
-              Education
-            </span>
-            <span
-              className={`cursor-pointer ${
-                activeTab === "Skills"
-                  ? "text-white border-b-2 border-pink-500"
-                  : "text-gray-400"
-              }`}
-              onClick={() => setActiveTab("Skills")}
-            >
-              Skills
-            </span>
+          {/* Info Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Languages",
+                content: "HTML, CSS, JavaScript, React.js",
+              },
+              { title: "Education", content: "B.Tech in Computer Science" },
+              { title: "Projects", content: "Built 5+ full-stack projects" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="p-6 bg-gray-50 border rounded-2xl shadow-md text-center hover:shadow-lg transition transform hover:scale-105"
+              >
+                <h3 className="font-semibold text-lg text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="text-md text-gray-600 mt-2">{item.content}</p>
+              </div>
+            ))}
           </div>
 
-          {/* Tab Content */}
+          {/* Tools & Social Media */}
           <div>
-            {activeTab === "Education" && (
-              <div className="space-y-6 mb-8">
-                {education.map((edu, index) => (
-                  <div key={index} className="mb-4">
-                    <p className="text-pink-500 font-semibold mb-2">
-                      {edu.year}
-                    </p>
-                    <p className="text-gray-300">{edu.degree}</p>
-                  </div>
-                ))}
-              </div>
-            )}
+            <h3 className="font-bold text-2xl text-black">
+              Tools & Social Media
+            </h3>
+            <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-4">
+              {/* Tools Section */}
+              {[
+                {
+                  src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+                  alt: "VS Code",
+                },
+                {
+                  src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg",
+                  alt: "IntelliJ IDEA",
+                },
+                {
+                  src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+                  alt: "Git",
+                },
+              ].map((tool, index) => (
+                <div
+                  key={index}
+                  className="w-12 h-12 bg-gray-50 border rounded-2xl shadow-md flex justify-center items-center p-3 hover:scale-110 transition transform hover:rotate-2"
+                >
+                  <img src={tool.src} alt={tool.alt} className="w-8 h-8" />
+                </div>
+              ))}
 
-            {activeTab === "Skills" && (
-              <ul className="list-disc pl-5 text-gray-300 space-y-4 mb-8">
-                {skills.map((skill, index) => (
-                  <li key={index} className="mb-4">
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            )}
+              {/* Social Media Section */}
+              {[
+                {
+                  src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
+                  alt: "LinkedIn",
+                  link: "https://linkedin.com",
+                },
+                {
+                  src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+                  alt: "GitHub",
+                  link: "https://github.com",
+                },
+                {
+                  src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg",
+                  alt: "Facebook",
+                  link: "https://facebook.com",
+                },
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-gray-50 border rounded-2xl shadow-md flex justify-center items-center p-3 hover:scale-110 transition transform hover:-rotate-1"
+                >
+                  <img src={social.src} alt={social.alt} className="w-8 h-8" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
