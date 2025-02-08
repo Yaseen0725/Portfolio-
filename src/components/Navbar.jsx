@@ -24,7 +24,7 @@ const Navbar = () => {
         {/* Menu for larger screens */}
         <ul className="hidden md:flex space-x-6 text-white">
           <li>
-            <Link to="/Home" className="hover:text-gray-300">
+            <Link to="/home" className="hover:text-gray-300">
               Home
             </Link>
           </li>
@@ -44,7 +44,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/contact_us" className="hover:text-gray-300">
+            <Link to="/contact" className="hover:text-gray-300">
               Contact_Us
             </Link>
           </li>
